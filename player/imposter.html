@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body style=" background: linear-gradient(
     90deg,
     red,
@@ -18,6 +20,42 @@
     <h1>
         ЗАДАНИЕ
     </h1>
-    
+    <h2>
+        убить всех игроков
+    </h2>
+
+    <div style="display: flex; gap: 10px; margin-top: 10px;">
+
+        <button id="report"
+            style="padding: 10px 20px; border: none; border-radius: 8px; background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet); color: black; cursor: pointer; font-weight: 700;"><img src="/reactor.png "></button>
+    </div>
+    </nav>
+
+    <audio id="notificationAudio" src="../sabbotazh.mp3" preload="auto"></audio>
+
+
+    <script>
+        document.getElementById('report').addEventListener('click', function () {
+            var audio = document.getElementById('notificationAudio');
+            if (audio) {
+                audio.currentTime = 0;
+                audio.play().catch(function (error) {
+                    console.warn('Audio playback blocked:', error);
+                });
+            }
+        });
+
+        document.getElementById('emergency').addEventListener('click', function () {
+            var audio = document.getElementById('emergencyAudio');
+            if (audio) {
+                audio.currentTime = 0;
+                audio.play().catch(function (error) {
+                    console.warn('Audio playback blocked:', error);
+                });
+            }
+        });
+    </script>
+
 </body>
+
 </html>
